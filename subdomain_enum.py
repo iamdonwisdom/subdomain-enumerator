@@ -10,14 +10,15 @@ print("""
 """)
 
 domain = input("Enter target domain: ")
+scan_time = datetime.now()
 
-found = []
+found = {}
 
 with open("wordlist.txt", "r") as file:
     subdomains = file.read().splitlines()
 
+print(f"\nScan Started: {scan_time}")
 print("\nStarting Enumeration...\n")
-
 
 def scan(subdomain):
     target = f"{subdomain}.{domain}"
@@ -27,8 +28,13 @@ def scan(subdomain):
 
         for answer in answers:
             ip = answer.to_text()
+
             print(f"[FOUND] {target} --> {ip}")
-            found.append((target, ip))
+
+            if target not in found:
+                found[target] = []
+
+            found[target].append(ip)
 
     except Exception:
         pass
@@ -43,10 +49,17 @@ print(f"Total Found: {len(found)}")
 # TXT Report
 with open("reports/results.txt", "w") as report:
     report.write(f"Target Domain: {domain}\n")
-    report.write(f"Scan Date: {datetime.now()}\n\n")
+    report.write(f"Scan Date: {scan_time}\n\n")
 
-    for subdomain, ip in found:
-        report.write(f"{subdomain} --> {ip}\n")
+    for subdomain, ips in found.items():
+        report.write(f"{subdomain} --> {', '.join(ips)}\n")
+
+# CSV Report
+with open("reports/results.csv", "w") as report:
+    report.write("Subdomain,IP Address\n")
+
+    for subdomain, ips in found.items():
+        report.write(f"{subdomain}, {' | '.join(ips)}\n")
 
 # HTML Report
 html = f"""
@@ -110,6 +123,7 @@ tr:hover {{
 <div class="report-info">
     <p><strong>Target Domain:</strong> {domain}</p>
     <p><strong>Total Subdomains Found:</strong> {len(found)}</p>
+    <p><strong>Scan Date:</strong> {scan_time}</p>
 </div>
 
 <table>
@@ -119,11 +133,11 @@ tr:hover {{
 </tr>
 """
 
-for subdomain, ip in found:
+for subdomain, ips in found.items():
     html += f"""
 <tr>
     <td>{subdomain}</td>
-    <td>{ip}</td>
+    <td>{', '.join(ips)}</td>
 </tr>
 """
 
@@ -138,5 +152,6 @@ with open("reports/results.html", "w") as report:
     report.write(html)
 
 print("\nReports Generated Successfully!")
-print("TXT Report: reports/results.txt")
+print("TXT Report : reports/results.txt")
+print("CSV Report : reports/results.csv")
 print("HTML Report: reports/results.html")

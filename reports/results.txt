@@ -1,5 +1,4 @@
 Target Domain: example.com
-Scan Date: 2026-06-22 15:18:56.893930
+Scan Date: 2026-06-22 16:50:52.544962
 
-www.example.com --> 104.20.23.154
-www.example.com --> 172.66.147.243
+www.example.com --> 104.20.23.154, 172.66.147.243
