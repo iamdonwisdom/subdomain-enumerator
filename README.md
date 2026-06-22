@@ -123,11 +123,11 @@ The HTML report provides a structured view of discovered subdomains and associat
 
 ### Terminal Output
 
-Add screenshot here.
+![Terminal Output](screenshots/terminal-output.png)
 
 ### HTML Report
 
-Add screenshot here.
+![HTML Report](screenshots/html-report.png)
 
 ---
 
