@@ -1,5 +1,29 @@
-Target Domain: example.com
-Date: 2026-06-22 13:56:39.673331
+Target Domain: google.com
+Scan Date: 2026-06-22 14:39:07.048458
 
-www.example.com --> 172.66.147.243
-www.example.com --> 104.20.23.154
+mail.google.com --> 142.251.36.133
+www.google.com --> 142.251.154.119
+admin.google.com --> 142.251.29.138
+www.google.com --> 142.251.151.119
+admin.google.com --> 142.251.29.101
+admin.google.com --> 142.251.29.113
+admin.google.com --> 142.251.29.100
+admin.google.com --> 142.251.29.102
+admin.google.com --> 142.251.29.139
+www.google.com --> 142.251.150.119
+www.google.com --> 142.251.155.119
+www.google.com --> 142.251.153.119
+www.google.com --> 142.251.152.119
+www.google.com --> 142.251.157.119
+www.google.com --> 142.251.156.119
+vpn.google.com --> 64.9.224.70
+vpn.google.com --> 64.9.224.68
+vpn.google.com --> 64.9.224.69
+blog.google.com --> 142.251.29.191
+api.google.com --> 142.250.140.105
+api.google.com --> 142.250.140.147
+api.google.com --> 142.250.140.106
+api.google.com --> 142.250.140.99
+api.google.com --> 142.250.140.103
+api.google.com --> 142.250.140.104
+shop.google.com --> 142.250.110.92
