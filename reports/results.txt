@@ -1,0 +1,5 @@
+Target Domain: example.com
+Date: 2026-06-22 13:56:39.673331
+
+www.example.com --> 172.66.147.243
+www.example.com --> 104.20.23.154
